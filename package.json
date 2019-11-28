@@ -1,0 +1,97 @@
+{
+  "name": "engage-digital-sdk-source-reddit",
+  "version": "0.2.0",
+  "description": "RingCentral Engage Digital Dimelo SDK source: Reddit",
+  "keywords": [
+    "RingCentral",
+    "source",
+    "template",
+    "Engage Digital",
+    "SDK"
+  ],
+  "scripts": {
+    "ngrok": "ngrok http -region ap 6066",
+    "start": "node -r @babel/register -r dotenv/config ./src/server/run-server.js",
+    "deploy": "npm run build-lambda && npm run deploy-lambda",
+    "fix": "./node_modules/.bin/standard --fix",
+    "compile": "babel src/server --out-dir dist/server",
+    "c": "./node_modules/.bin/webpack-dev-server --progress --colors --config build/webpack.config.babel.js",
+    "build": "npm run clean && npm run compile",
+    "view": "node build/view.js",
+    "clean": "node build/clean.js",
+    "build-lambda": "npm run clean && node cmds/build && npm run view",
+    "deploy-lambda": "node cmds/deploy",
+    "watch": "cd deploy && ../node_modules/.bin/sls logs -f app -t",
+    "lint": "./node_modules/.bin/standard"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "*-compiled.js",
+      "/dist/"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "antd": "^3.17.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "babel-plugin-import": "^1.11.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "dynamodb-local": "0.0.29",
+    "file-loader": "^3.0.1",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "ngrok": "^3.1.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "react-subx": "^0.4.9",
+    "serverless": "^1.35.1",
+    "shelljs": "^0.8.3",
+    "standard": "^12.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "subx": "^0.7.6",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "cron": "^1.7.2",
+    "dynamo-sequelize": "^0.7.2",
+    "express-basic-auth": "^1.2.0",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.7.1",
+    "pug": "^2.0.3",
+    "ringcentral-engage-source": "^0.1.9",
+    "sequelize": "^6.0.0",
+    "serverless-http": "^2.0.2",
+    "shortid": "^2.2.14",
+    "snoowrap": "^1.20.1",
+    "sqlite3": "^4.0.4",
+    "timeout-as-promise": "^1.0.0"
+  },
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxdong262/engage-digital-sdk-source-reddit.git"
+  },
+  "author": "Drake Zhao <drake.zhao@ringcentral.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zxdong262/engage-digital-sdk-source-reddit/issues"
+  },
+  "homepage": "https://github.com/zxdong262/engage-digital-sdk-source-reddit#readme"
+}
