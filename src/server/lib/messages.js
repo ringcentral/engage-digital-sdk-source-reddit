@@ -22,7 +22,7 @@ import cheerio from 'cheerio'
 function getThreadId (msg) {
   const res = (msg.url || msg.link_url).match(/comments\/([^/]+)\//)
   const r = _.get(res, '[1]')
-  return 'th_' + r
+  return 'thr_' + r
 }
 
 /**
@@ -41,8 +41,8 @@ export async function formatMessage (user, records) {
       return null
     }
     const prefix = d.title
-      ? 'po_'
-      : 'com_'
+      ? 'pos_'
+      : 'comm_'
     const dt = new Date(d.created * 1000).toISOString()
     const rr = {
       actions: ['show', 'reply'],
@@ -76,25 +76,13 @@ export const listMessages = async (user, sinceId) => {
   // console.log(comments)
   // console.log('======')
   let r = await formatMessage(user, [...threads, ...comments])
-  console.log('--before sort----', sinceId)
-  console.log(r)
   r.sort((a, b) => {
     return a.created_at > b.created_at ? -1 : 1
   })
-  console.log('---after sort---')
-  console.log(r)
-  // console.log(f.map(g => {
-  //   return {
-  //     id: g.id,
-  //     created_at: g.created_at
-  //   }
-  // }))
   if (sinceId) {
     let i = _.findIndex(r, d => d.id === sinceId)
     r = r.slice(0, i)
   }
-  console.log('--after filter----')
-  console.log(r)
   return r
 }
 
@@ -116,13 +104,13 @@ export const showMessage = async (user, tid, mid) => {
 export const createMessage = async (user, tid, message) => {
   // /restapi/v1.0/glip/chats/chatId/posts
   let sid = message.in_reply_to_id || message.thread_id
-  let type = 'po'
+  let type = 'pos'
   if (sid.includes('_')) {
-    let arr = sid.split('_')[1]
+    let arr = sid.split('_')
     sid = arr[1]
     type = arr[0]
   }
-  let r = type === 'com'
+  let r = type === 'comm'
     ? user.r.getComment(sid)
     : user.r.getSubmission(sid)
   let msg = message.body

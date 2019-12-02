@@ -52,6 +52,9 @@ export const onRequest = async (body, req) => {
     default:
       result = {}
   }
+  if (result) {
+    console.log('arr length:', result.length)
+  }
   return result
 }
 

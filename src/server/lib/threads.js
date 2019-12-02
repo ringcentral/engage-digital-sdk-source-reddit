@@ -14,12 +14,12 @@ export const listThreads = async (user) => {
   }
   res = res.map(r => {
     return {
-      id: 'th_' + r.id,
+      id: 'thr_' + r.id,
       title: r.title
     }
   })
-  console.log('======list thread=====')
-  console.log(res)
+  // console.log('======list thread=====')
+  // console.log(res)
   return res
 }
 
