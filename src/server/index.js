@@ -31,7 +31,7 @@ export const onRequest = async (body, req) => {
           messages: ['create', 'show', 'list', 'reply'],
           threads: ['list', 'show', 'reply']
         },
-        options: ['threads.no_content', 'messages.no_title', 'messages.text']
+        options: ['messages.no_title', 'threads.no_content', 'messages.text', 'messages.html']
       }
       break
     case 'threads.list':

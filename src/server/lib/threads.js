@@ -9,12 +9,18 @@
  */
 export const listThreads = async (user) => {
   let res = await user.r.getSubreddit(user.subreddit).getNew()
-  return res.map(r => {
+  if (!res) {
+    return []
+  }
+  res = res.map(r => {
     return {
-      actions: ['show', 'reply'],
-      id: r.id
+      id: 'th_' + r.id,
+      title: r.title
     }
   })
+  console.log('======list thread=====')
+  console.log(res)
+  return res
 }
 
 /**
@@ -24,8 +30,12 @@ export const listThreads = async (user) => {
  */
 export const showThread = async (user, tid) => {
   // GET /restapi/v1.0/glip/conversations/6090260482
-  let res = await user.r.getSubmission(tid)
+  let res = await user.r.getSubmission(tid.split('_')[1]).fetch()
+  if (!res) {
+    return ''
+  }
   return {
-    id: res.id
+    id: res.id,
+    title: res.title
   }
 }
