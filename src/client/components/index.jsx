@@ -125,7 +125,7 @@ export default class App extends Component {
           <div className='pd1b pd1t'>
             <a href={window.rc.authUrlDefault}>
               <Button icon='login' type='primary' size='large'>
-                Login
+                Login with Reddit
               </Button>
             </a>
           </div>
