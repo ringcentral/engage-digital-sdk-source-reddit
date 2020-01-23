@@ -1,8 +1,8 @@
-# engage-digital-sdk-source-reddit
+# Engage Digital SDK Source for Reddit
 
 RingCentral Engage Digital Dimelo SDK source: Reddit, created with [Framework(js) to create Dimelo SDK source for RingCentral Engage Digital](https://github.com/ringcentral/engage-digital-source-sdk-js)
 
-## Youtube video
+## YouTube Video
 
 [engage-digital-sdk-source-reddit](https://youtu.be/kOfPbJaVHYU)
 
