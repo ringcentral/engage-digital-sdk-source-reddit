@@ -9,7 +9,7 @@ RingCentral Engage Digital Dimelo SDK source: Reddit, created with [Framework(js
 ## Prerequisites
 
 - Nodejs 8.10+/npm, recommend using [nvm](https://github.com/creationix/nvm) to install nodejs/npm.
-- RingCentral Engage(Dimelo) account, [request a demo](http://site.dimelo.com/en/demo#schedule-demo).
+- RingCentral Engage Digital (formerly Dimelo) account, [request a demo](http://site.dimelo.com/en/demo#schedule-demo).
 
 ## Quick start
 
