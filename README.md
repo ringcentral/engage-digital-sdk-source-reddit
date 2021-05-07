@@ -1,15 +1,15 @@
-# engage-digital-sdk-source-reddit
+# Engage Digital SDK Source for Reddit
 
 RingCentral Engage Digital Dimelo SDK source: Reddit, created with [Framework(js) to create Dimelo SDK source for RingCentral Engage Digital](https://github.com/ringcentral/engage-digital-source-sdk-js)
 
-## Youtube video
+## YouTube Video
 
 [engage-digital-sdk-source-reddit](https://youtu.be/kOfPbJaVHYU)
 
 ## Prerequisites
 
 - Nodejs 8.10+/npm, recommend using [nvm](https://github.com/creationix/nvm) to install nodejs/npm.
-- RingCentral Engage(Dimelo) account, [request a demo](http://site.dimelo.com/en/demo#schedule-demo).
+- RingCentral Engage Digital (formerly Dimelo) account, [request a demo](http://site.dimelo.com/en/demo#schedule-demo).
 
 ## Quick start
 
