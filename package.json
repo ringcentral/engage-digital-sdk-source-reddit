@@ -73,7 +73,7 @@
     "dynamo-sequelize": "*",
     "express-basic-auth": "^1.2.0",
     "express-jwt": "^5.3.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "pg": "^7.7.1",
     "pug": "^2.0.3",
     "ringcentral-engage-source": "^0.1.9",
